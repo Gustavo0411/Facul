@@ -1,0 +1,23 @@
+Scanner teclado = new Scanner(System.in);
+
+        // Variaveis
+        double soma = 0;
+        int alunos;
+        int nota;
+        double media;
+
+        // Dados de entrada
+        System.out.println("Digite a quantidade de alunos");
+        alunos = teclado.nextInt();
+
+        for (int i = 1; i <= alunos; i++) {
+
+            System.out.println("Entre com a Nota: ");
+            nota = teclado.nextInt();
+
+            soma += nota;
+
+        }
+
+        media = soma / alunos;
+        System.out.printf("A media eh %.2f", media);
