@@ -1,0 +1,41 @@
+public static void main(String[] args) {
+        int ganha, perda, i, guardar;
+        ganha = 0;
+        perda = 0;
+        guardar =0;
+        i = 0;
+        while (i < 10000) {
+            i++;
+            int d1 = (int) (Math.random() * 5)+1;
+            int d2 = (int) (Math.random() * 5)+1;
+            if (d1 + d2 == 7 || d1 + d2 == 11) {
+                ganha += 1;
+                System.out.println("Ganha");
+            } else if (d1 + d2 == 2 || d1 + d2 == 3 || d1 + d2 == 12) {
+                perda += 1;
+                System.out.println("Perda");
+            } else if (d1 + d2 == 4 || d1 + d2 == 5 || d1 + d2 == 6 || d1 + d2 == 8 || d1 + d2 == 9 || d1 + d2 == 10) {
+                guardar = d1 + d2;
+                System.out.println("Preso");
+                while (true) {
+                    int d3 = (int) (Math.random() * 5)+1;
+                    int d4 = (int) (Math.random() * 5)+1;
+
+                    if (guardar == d3 + d4) {
+                        ganha += 1;
+                        System.out.println("Preso = ganha1");
+                        break;
+                    } else if (d3 + d4 == 7) {
+                        perda += 1;
+                        System.out.println("Preso = perde1");
+                        break;
+                    }
+                }
+
+            }
+        }
+        System.out.println(ganha);
+        System.out.println(perda);
+        System.out.println(ganha+perda);
+    }    
+}
